@@ -27,17 +27,17 @@ export const binaryOperators = new Registry<BinaryOperatorInfo>(() => {
     {
       id: BinaryOperationID.Subtract,
       name: 'Subtract',
-      operation: (a: number, b: number) => (isNull(a, b) ? NaN : a - b),
+      operation: (a: number, b: number) => (isNull(a, b) ? 0 : a - b),
     },
     {
       id: BinaryOperationID.Multiply,
       name: 'Multiply',
-      operation: (a: number, b: number) => (isNull(a, b) ? NaN : a * b),
+      operation: (a: number, b: number) => (isNull(a, b) ? 0 : a * b),
     },
     {
       id: BinaryOperationID.Divide,
       name: 'Divide',
-      operation: (a: number, b: number) => a / b,
+      operation: (a: number, b: number) => (isNull(a, b) ? 0 : a / b),
     },
   ];
 });
