@@ -22,12 +22,12 @@ export const binaryOperators = new Registry<BinaryOperatorInfo>(() => {
     {
       id: BinaryOperationID.Add,
       name: 'Add',
-      operation: (a: number, b: number) => (isNull(a, b) ? NaN : a - b),
+      operation: (a: number, b: number) => (isNull(a, b) ? NaN : a + b),
     },
     {
       id: BinaryOperationID.Subtract,
       name: 'Subtract',
-      operation: (a: number, b: number) => a - b,
+      operation: (a: number, b: number) => (isNull(a, b) ? NaN : a - b),
     },
     {
       id: BinaryOperationID.Multiply,
