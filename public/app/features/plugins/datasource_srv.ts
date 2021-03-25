@@ -157,6 +157,10 @@ export class DatasourceSrv implements DataSourceService {
       if (filters.pluginId && x.meta.id !== filters.pluginId) {
         return false;
       }
+      // Determine wether datasource should be visible
+      console.log(x);
+      console.log(filters);
+
       return true;
     });
 

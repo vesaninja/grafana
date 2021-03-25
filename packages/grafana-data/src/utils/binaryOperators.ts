@@ -13,12 +13,16 @@ interface BinaryOperatorInfo extends RegistryItem {
   operation: BinaryOperation;
 }
 
+const isNull = (...args: any[]) => {
+  return args.includes(null);
+};
+
 export const binaryOperators = new Registry<BinaryOperatorInfo>(() => {
   return [
     {
       id: BinaryOperationID.Add,
       name: 'Add',
-      operation: (a: number, b: number) => a + b,
+      operation: (a: number, b: number) => (isNull(a, b) ? NaN : a - b),
     },
     {
       id: BinaryOperationID.Subtract,
